@@ -12,5 +12,3 @@ function showRecords(){
 }
 
 showRecords();
-
-// La función no está funcionando bien, solamente muestra el alert de inputPicker.js de que debo ingresar datos, cuando en realidad ya los tengo puestos. Raro.

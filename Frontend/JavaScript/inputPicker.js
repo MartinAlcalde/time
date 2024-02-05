@@ -8,7 +8,7 @@ const inputDescription = document.getElementById('description');
 // Evento para manejar el formulario
 document.getElementById('form').addEventListener('submit', function (event) {
     event.preventDefault(); //Evitar el envío por defecto del formulario.
-
+    
     //Obtener los valores de los input
     const nombre = inputName.value;
     const apellido = inputLastName.value;
@@ -16,10 +16,10 @@ document.getElementById('form').addEventListener('submit', function (event) {
     const proyecto = inputProject.value;
     const descripcion = inputDescription.value;
 
+    
     // Verificamos que los campos estén completos
-    if (nombre & apellido & fecha & proyecto & descripcion) {
+    if (nombre && apellido && fecha && proyecto) {
         // Creamos un objeto que contenga la información de los campos
-
         const registro = {
             nombre,
             apellido,
@@ -27,6 +27,7 @@ document.getElementById('form').addEventListener('submit', function (event) {
             proyecto,
             descripcion
         };
+
 
         // Obtenemos los registros o inicializamos un array - Por qué lo del array??
         const registros = JSON.parse(localStorage.getItem('registros')) || [];
@@ -38,7 +39,7 @@ document.getElementById('form').addEventListener('submit', function (event) {
         localStorage.setItem('registros', JSON.stringify(registros));
 
         // Limpiar los campos del form
-        document.getElementById('form').reset;
+        document.getElementById('form').reset();
     } else {
         alert('Complete todos los campos, por favor.');
     }
