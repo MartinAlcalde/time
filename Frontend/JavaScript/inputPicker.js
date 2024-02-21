@@ -29,7 +29,7 @@ document.getElementById('form').addEventListener('submit', function (event) {
         };
 
 
-        // Obtenemos los registros o inicializamos un array - Por qué lo del array??
+        // Obtenemos los registros o inicializamos un array
         const registros = JSON.parse(localStorage.getItem('registros')) || [];
 
         // Agregar el nuevo registro al array
