@@ -1,24 +1,21 @@
- function showRecords(){
-    const registros = JSON.parse(localStorage.getItem('registros')) || [];
-
-    if(registros.length > 0){
-        console.log('Registros guardados.');
-        registros.forEach(registro =>{
-            console.log(registro)
-        });
-    } else {
-        console.log('No hay registros guardados.');
-    }
-}
-
-showRecords();
- 
-
 document.addEventListener('DOMContentLoaded', () => {
-    const inputdata = document.getElementById("report-container");
-
-    let reportList = localStorage.getItem("registros");
-
-    inputdata.textContent = reportList;
-    // I need improve this code, it's very ugly but it works haha
+    const registros = JSON.parse(localStorage.getItem('registros')) || [];
+    for (const registro of registros) {
+        // Mostrar registros en la tabla
+        displayRecord(registro);
+    }
 });
+
+function displayRecord(registro) {
+    const newRow = document.createElement('tr');
+    newRow.innerHTML = `
+        <td>${registro.nombre}</td>
+        <td>${registro.apellido}</td>
+        <td>${registro.fecha}</td>
+        <td>${registro.proyecto}</td>
+        <td>${registro.horas}</td>
+        <td>${registro.descripcion}</td>
+        <td><button class="btn btn-danger delete-btn">Eliminar</button></td>
+    `;
+    document.getElementById('report-container').appendChild(newRow);
+}
