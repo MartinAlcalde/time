@@ -69,16 +69,53 @@
                 <th>Horas</th>
                 <th>Descripción</th>
             </tr>
-            
-            
-            
-                <!--Put the report data here!-->
-
-                <!-- Se podría generar contenido desde DOM para cada nuevo elemento en donde tengo que crear un tr nuevo y dentro sus respectivos td con la info -->
-            
         </table>
     </div>
 </div>
+
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formulario-edicion">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="name">
+            </div>
+            <div class="mb-3">
+              <label for="lastname" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="lastname">
+            </div>
+            <div class="mb-3">
+              <label for="date" class="form-label">Fecha</label>
+              <input type="date" class="form-control" id="date">
+            </div>
+            <div class="mb-3">
+              <label for="project" class="form-label">Proyecto</label>
+              <input type="text" class="form-control" id="project">
+            </div>
+            <div class="mb-3">
+              <label for="hours" class="form-label">Horas</label>
+              <input type="number" class="form-control" id="hours">
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Descripción</label>
+              <textarea class="form-control" id="description" rows="3"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" onclick="confirmarCambios()" id="confirmarCambiosBtn">Confirmar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
 <footer class="mt-5">
     <p class="text-center fw-bold">2024 - Web desarrollada por Maximiliano Bertta Borges</p>
@@ -88,6 +125,7 @@
 <script src="../JavaScript/inputPicker.js"></script>
 <script src="../JavaScript/showRecords.js"></script>
 <script src="../JavaScript/deleteRecords.js"></script>
+<script src="../JavaScript/updateRecords.js"></script>
 
 </body>
 </html>
