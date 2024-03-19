@@ -1,10 +1,24 @@
-document.getElementById('report-container').addEventListener('click', (event) => {
+/* document.getElementById('report-container').addEventListener('click', (event) => {
     if (event.target.classList.contains('btn-modificar')) {
         const registroId = event.target.dataset.registroId;
         const registro = registros.find(registro => registro.id === registroId);
         mostrarModalEdicion(registro);
     }
-});
+}); */
+
+const botonesModificar = document.querySelectorAll('.btn-modificar');
+
+for (const boton of botonesModificar) {
+  boton.addEventListener('click', () => {
+    
+    // Mostrar el modal
+    // NO ME ESTÁ FUNCIONANDO
+    const modal = document.getElementById('editModal');
+    modal.style.display = 'block';
+
+    mostrarModalEdicion(registro);
+  });
+}
 
 function mostrarModalEdicion(registro) {
     // Llenar los campos del modal con los datos del registro
